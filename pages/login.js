@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import Header from "../components/Header"
-const login = () => {
+const login =() => {
   return (
     
-    <div class="container">
+    
+  <div class="container">
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-5">
@@ -99,7 +100,7 @@ const login = () => {
 
               <div class="bottom text-center">
                 Aren't you user?{" "}
-                <a href="#">
+                <a href="register">
                   <b>Register</b>
                 </a>
               </div>
