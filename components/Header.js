@@ -77,11 +77,10 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-              <i class="fa fa-xing" aria-hidden="true"></i>
+              
             </li>
             <div className="item-button">
               <button type="button" class="btn btn-outline-primary">
-                {" "}
                 <Link href="/login">Login</Link>
               </button>
             </div>
