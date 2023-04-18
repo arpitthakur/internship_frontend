@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+
 import Header from "../components/Header";
 const login = () => {
   return (
@@ -20,6 +21,7 @@ const login = () => {
                     <i className="fa fa-twitter"></i> Twitter
                   </a>
                 </div>
+
 
                 <div className="login-or">
                   <hr className="hr-or"></hr>
@@ -88,9 +90,11 @@ const login = () => {
                   <hr className="hr-or"></hr>
                 </div>
 
+
                 <div className="bottom text-center">
                   Aren't you user? <Link href="/register">Register</Link>
                 </div>
+
               </div>
             </div>
           </div>

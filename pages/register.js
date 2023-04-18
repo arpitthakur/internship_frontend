@@ -1,4 +1,5 @@
 import React from "react";
+
 import Header from "../components/Header";
 import Link from "next/link";
 const register = () => {
@@ -55,6 +56,7 @@ const register = () => {
                         placeholder="Email"
                         required
                       />
+
                     </div>
 
                     <div className="form-group">
@@ -91,6 +93,7 @@ const register = () => {
                     </div> */}
                     </div>
 
+
                     <div className="form-group">
                       <button
                         id="reg_submit"
@@ -109,10 +112,12 @@ const register = () => {
                   Are you user? <Link href="/login">Login</Link>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
     </>
   );
 };

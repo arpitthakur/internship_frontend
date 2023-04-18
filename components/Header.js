@@ -14,10 +14,12 @@ const Header = () => {
     },
   ];
   return (
+
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand">
           <Link href="/">Internship Finder</Link>
+
         </a>
         <button
           className="navbar-toggler"
@@ -88,6 +90,7 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
+
             </li>
             <div className="item-button">
               <button type="button" className="btn btn-outline-primary">
@@ -101,6 +104,9 @@ const Header = () => {
                 >
                   <b>Login</b>
                 </Dropdown>
+
+              
+ 
               </button>
             </div>
             <div className="btn-group">
@@ -120,8 +126,10 @@ const Header = () => {
                 <a className="dropdown-item" href="register">
                   <Link href="/register">As a Student</Link>
                 </a>
+
                 <a className="dropdown-item" href="#">
                   <Link href="/register"> As an Employee</Link>
+
                 </a>
               </div>
             </div>
