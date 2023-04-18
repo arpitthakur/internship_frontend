@@ -1,15 +1,26 @@
 import Link from "next/link";
 import React from "react";
+import { Button, Dropdown } from "antd";
 
 const Header = () => {
+  const items = [
+    {
+      key: "1",
+      label: <Link href="/student_register">Login as Student</Link>,
+    },
+    {
+      key: "2",
+      label: <Link href="/employee_register">Login as Employee</Link>,
+    },
+  ];
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Internship Finder
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand">
+          <Link href="/">Internship Finder</Link>
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavDropdown"
@@ -17,13 +28,13 @@ const Header = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -31,28 +42,28 @@ const Header = () => {
               >
                 Internship
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     abc
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     def
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     ghi
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -60,50 +71,57 @@ const Header = () => {
               >
                 Job
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     abc
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     def
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     ghi
                   </a>
                 </li>
               </ul>
-              <i class="fa fa-xing" aria-hidden="true"></i>
             </li>
             <div className="item-button">
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" className="btn btn-outline-primary">
                 {" "}
-                <Link href="/login">Login</Link>
+                <Dropdown
+                  menu={{
+                    items,
+                  }}
+                  placement="bottom"
+                  arrow
+                >
+                  <b>Login</b>
+                </Dropdown>
               </button>
             </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-primary btn-register">
+            <div className="btn-group">
+              <button type="button" className="btn btn-primary btn-register">
                 Register
               </button>
               <button
                 type="button"
-                class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                className="btn btn-primary dropdown-toggle dropdown-toggle-split"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span class="sr-only">Toggle Dropdown</span>
+                <span className="sr-only">Toggle Dropdown</span>
               </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="register">
-                  As a Student
+              <div className="dropdown-menu">
+                <a className="dropdown-item" href="register">
+                  <Link href="/register">As a Student</Link>
                 </a>
-                <a class="dropdown-item" href="#">
-                  As an Employeer
+                <a className="dropdown-item" href="#">
+                  <Link href="/register"> As an Employee</Link>
                 </a>
               </div>
             </div>

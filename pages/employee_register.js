@@ -1,10 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
-import Link from "next/link";
-const register = () => {
+
+function employee_register() {
   return (
     <>
-      <Header />
       <div className="container">
         <div className="row">
           <div className="col-md-4"></div>
@@ -115,5 +113,6 @@ const register = () => {
       </div>
     </>
   );
-};
-export default register;
+}
+
+export default employee_register;
