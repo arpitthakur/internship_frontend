@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           Internship Finder
         </a>
         <button
@@ -77,11 +77,10 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-              <i class="fa fa-xing" aria-hidden="true"></i>
+              
             </li>
             <div className="item-button">
               <button type="button" class="btn btn-outline-primary">
-                {" "}
                 <Link href="/login">Login</Link>
               </button>
             </div>
@@ -102,7 +101,7 @@ const Header = () => {
                 <a class="dropdown-item" href="register">
                   As a Student
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="register">
                   As an Employeer
                 </a>
               </div>

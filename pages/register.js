@@ -1,7 +1,11 @@
 import React from "react";
-const register=()=> {
+import Header from "../components/Header"
+const register = () => {
   return (
+    <>
+      <Header/>
     <div class="container">
+      
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-5">
@@ -18,7 +22,7 @@ const register=()=> {
               </div>
 
               <div class="login-or">
-                <hr class="hr-or"/>
+                <hr class="hr-or" />
                 <span class="span-or">or</span>
               </div>
 
@@ -37,7 +41,6 @@ const register=()=> {
                       id="reg_username"
                       name="user_name"
                       class="form-control"
-                      value=""
                       placeholder="Username"
                       required
                     />
@@ -56,7 +59,6 @@ const register=()=> {
                         data-toggle="popover"
                         data-container="body"
                         data-html="true"
-                        value=""
                         placeholder="Password"
                         required
                       />
@@ -68,7 +70,7 @@ const register=()=> {
                           id="button-append1"
                           onclick="togglePassword()"
                         >
-                          <i class="fa fa-eye" aria-hidden="true"></i>
+                       
                         </button>
                       </div>
                     </div>
@@ -81,7 +83,6 @@ const register=()=> {
                         aria-valuenow="40"
                         aria-valuemin="0"
                         aria-valuemax="100"
-                        style="width:0%"
                       ></div>
                     </div>
 
@@ -167,7 +168,7 @@ const register=()=> {
                           id="button-append2"
                           onclick="togglePassword()"
                         >
-                          <i class="fa fa-eye" aria-hidden="true"></i>
+                         
                         </button>
                       </div>
                     </div>
@@ -218,7 +219,6 @@ const register=()=> {
                       id="reg_useranswer"
                       name="user_answer"
                       class="form-control"
-                      value=""
                       placeholder="Are you Answers"
                     />
                   </div>
@@ -227,7 +227,6 @@ const register=()=> {
                     <button
                       id="reg_submit"
                       name="submit"
-                      value="1"
                       class="btn btn-block btn-primary"
                       disabled="disabled"
                     >
@@ -244,28 +243,21 @@ const register=()=> {
                       id="reg_remember"
                       name="user_remember"
                       class="form-check-input"
-                      value="1"
                     />
                     <label class="form-check-label">Remember me</label>
                   </div>
                 </form>
               </div>
 
-              <div class="login-or">
-                <hr class="hr-or"/>
-              </div>
+             
 
-              <div class="bottom text-center">
-                Are you user?{" "}
-                <a href="#">
-                  <b>Login</b>
-                </a>
-              </div>
+              
             </div>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
-}
+};
 export default register;
