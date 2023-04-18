@@ -1,11 +1,8 @@
 import React from "react";
 
-import Header from "../components/Header";
-import Link from "next/link";
-const register = () => {
+function employee_register() {
   return (
     <>
-      <Header />
       <div className="container">
         <div className="row">
           <div className="col-md-4"></div>
@@ -56,7 +53,6 @@ const register = () => {
                         placeholder="Email"
                         required
                       />
-
                     </div>
 
                     <div className="form-group">
@@ -93,7 +89,6 @@ const register = () => {
                     </div> */}
                     </div>
 
-
                     <div className="form-group">
                       <button
                         id="reg_submit"
@@ -112,13 +107,12 @@ const register = () => {
                   Are you user? <Link href="/login">Login</Link>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
     </>
   );
-};
-export default register;
+}
+
+export default employee_register;

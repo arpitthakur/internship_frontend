@@ -1,114 +1,106 @@
 import Link from "next/link";
 import React from "react";
-import Header from "../components/Header"
-const login =() => {
+
+import Header from "../components/Header";
+const login = () => {
   return (
-    
-    
-  <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-5">
-          <div class="card cardbox">
-            <div class="card-header">Login</div>
-            <div class="card-body">
-              <div class="social-buttons">
-                <a href="#" class="btn btn-md btn-block btn-fb">
-                  <i class="fa fa-facebook"></i> Facebook
-                </a>
-                <a href="#" class="btn btn-md btn-block btn-tw">
-                  <i class="fa fa-twitter"></i> Twitter
-                </a>
-              </div>
+    <>
+      <Header />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4"></div>
+          <div className="col-md-5">
+            <div className="card cardbox">
+              <div className="card-header">Login</div>
+              <div className="card-body">
+                <div className="social-buttons">
+                  <a href="#" className="btn btn-md btn-block btn-fb">
+                    <i className="fa fa-facebook"></i> Facebook
+                  </a>
+                  <a href="#" className="btn btn-md btn-block btn-tw">
+                    <i className="fa fa-twitter"></i> Twitter
+                  </a>
+                </div>
 
-              <div class="login-or">
-                <hr class="hr-or"></hr>
-                <span class="span-or">or</span>
-              </div>
 
-              <div class="form-group">
-                <form
-                  id="login-nav"
-                  method="post"
-                  role="form"
-                  class="form"
-                  accept-charset="UTF-8"
-                >
-                  <div class="form-group">
-                    <label class="sr-only">Username</label>
-                    <input
-                      type="text"
-                      id="reg_username"
-                      name="user_name"
-                      class="form-control"
-                      placeholder="Username"
-                      required
-                    />
-                  </div>
+                <div className="login-or">
+                  <hr className="hr-or"></hr>
+                  <span className="span-or">or</span>
+                </div>
 
-                  <div class="form-group">
-                    <label class="sr-only">Password</label>
-
-                    <div class="input-group">
+                <div className="form-group">
+                  <form
+                    id="login-nav"
+                    method="post"
+                    role="form"
+                    className="form"
+                    accept-charset="UTF-8"
+                  >
+                    <div className="form-group">
+                      <label className="sr-only">Username</label>
                       <input
-                        type="password"
-                        id="reg_userpassword"
-                        name="user_password"
-                        class="form-control"
-                        data-placement="bottom"
-                        data-toggle="popover"
-                        data-container="body"
-                        data-html="true"
-                        placeholder="Password"
+                        type="text"
+                        id="reg_username"
+                        name="user_name"
+                        className="form-control"
+                        placeholder="Username"
                         required
                       />
                     </div>
 
-                    <div class="help-block text-right">
-                      <small>
-                        <a href="#">Forgot Password</a>
-                      </small>
+                    <div className="form-group">
+                      <label className="sr-only">Password</label>
+
+                      <div className="input-group">
+                        <input
+                          type="password"
+                          id="reg_userpassword"
+                          name="user_password"
+                          className="form-control"
+                          data-placement="bottom"
+                          data-toggle="popover"
+                          data-container="body"
+                          data-html="true"
+                          placeholder="Password"
+                          required
+                        />
+                      </div>
+
+                      <div className="help-block text-right">
+                        <small>
+                          <a href="#">Forgot Password</a>
+                        </small>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="form-group">
-                    <button
-                      id="reg_submit"
-                      name="submit"
-                      value="1"
-                      class="btn btn-block btn-primary"
-                    >
-                      Login
-                    </button>
-                  </div>
+                    <div className="form-group">
+                      <button
+                        id="reg_submit"
+                        name="submit"
+                        value="1"
+                        className="btn btn-block btn-primary"
+                      >
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
 
-                  <div class="form-check">
-                    <input
-                      type="checkbox"
-                      id="reg_remember"
-                      name="user_remember"
-                      class="form-check-input"
-                    />
-                    <label class="form-check-label">Remember me</label>
-                  </div>
-                </form>
-              </div>
+                <div className="login-or">
+                  <hr className="hr-or"></hr>
+                </div>
 
-              <div class="login-or">
-                <hr class="hr-or"></hr>
-              </div>
 
-              <div class="bottom text-center">
-                Aren't you user?{" "}
-                <a href="register">
-                  <b>Register</b>
-                </a>
+                <div className="bottom text-center">
+                  Aren't you user? <Link href="/register">Register</Link>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
