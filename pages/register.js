@@ -1,8 +1,8 @@
-import Link from "next/link";
 import React from "react";
 
 import Header from "../components/Header";
-const login = () => {
+import Link from "next/link";
+const register = () => {
   return (
     <>
       <Header />
@@ -11,7 +11,7 @@ const login = () => {
           <div className="col-md-4"></div>
           <div className="col-md-5">
             <div className="card cardbox">
-              <div className="card-header">Login</div>
+              <div className="card-header">Register</div>
               <div className="card-body">
                 <div className="social-buttons">
                   <a href="#" className="btn btn-md btn-block btn-fb">
@@ -22,9 +22,8 @@ const login = () => {
                   </a>
                 </div>
 
-
                 <div className="login-or">
-                  <hr className="hr-or"></hr>
+                  <hr className="hr-or" />
                   <span className="span-or">or</span>
                 </div>
 
@@ -37,7 +36,7 @@ const login = () => {
                     accept-charset="UTF-8"
                   >
                     <div className="form-group">
-                      <label className="sr-only">Username</label>
+                      <label className="sr-only">Name</label>
                       <input
                         type="text"
                         id="reg_username"
@@ -46,6 +45,18 @@ const login = () => {
                         placeholder="Username"
                         required
                       />
+                    </div>
+                    <div className="form-group">
+                      <label className="sr-only">Email</label>
+                      <input
+                        type="email"
+                        id="reg_email"
+                        name="user_email"
+                        className="form-control"
+                        placeholder="Email"
+                        required
+                      />
+
                     </div>
 
                     <div className="form-group">
@@ -66,12 +77,22 @@ const login = () => {
                         />
                       </div>
 
-                      <div className="help-block text-right">
+                      {/* <div className="help-block text-right">
+                      <small>
+                        <a href="#">Forgot Password</a>
+                      </small>
+                      <span
+                        id="reg-password-quality"
+                        className="hide pull-left block-help"
+                      >
                         <small>
-                          <a href="#">Forgot Password</a>
+                          Password{" "}
+                          <span id="reg-password-quality-result"></span>
                         </small>
-                      </div>
+                      </span>
+                    </div> */}
                     </div>
+
 
                     <div className="form-group">
                       <button
@@ -79,29 +100,25 @@ const login = () => {
                         name="submit"
                         value="1"
                         className="btn btn-block btn-primary"
+                        disabled="disabled"
                       >
-                        Login
+                        Create user
                       </button>
                     </div>
                   </form>
                 </div>
 
-                <div className="login-or">
-                  <hr className="hr-or"></hr>
-                </div>
-
-
                 <div className="bottom text-center">
-                  Aren't you user? <Link href="/register">Register</Link>
+                  Are you user? <Link href="/login">Login</Link>
                 </div>
-
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
     </>
   );
 };
-
-export default login;
+export default register;

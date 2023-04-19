@@ -120,6 +120,7 @@ const Header = () => {
                 <a className="dropdown-item" href="register">
                   <Link href="/student_register">As a Student</Link>
                 </a>
+
                 <a className="dropdown-item" href="#">
                   <Link href="/employee_register"> As an Employee</Link>
                 </a>
