@@ -6,11 +6,11 @@ const Header = () => {
   const items = [
     {
       key: "1",
-      label: <Link href="/student_register">Login as Student</Link>,
+      label: <Link href="/student_login">Login as Student</Link>,
     },
     {
       key: "2",
-      label: <Link href="/employee_register">Login as Employee</Link>,
+      label: <Link href="/employee_login">Login as Employee</Link>,
     },
   ];
   return (
@@ -118,10 +118,10 @@ const Header = () => {
               </button>
               <div className="dropdown-menu">
                 <a className="dropdown-item" href="register">
-                  <Link href="/register">As a Student</Link>
+                  <Link href="/student_register">As a Student</Link>
                 </a>
                 <a className="dropdown-item" href="#">
-                  <Link href="/register"> As an Employee</Link>
+                  <Link href="/employee_register"> As an Employee</Link>
                 </a>
               </div>
             </div>

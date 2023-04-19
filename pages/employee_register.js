@@ -1,14 +1,16 @@
 import React from "react";
-
+import Link from "next/link";
+import Header from "../components/Header";
 function employee_register() {
   return (
     <>
+      <Header />
       <div className="container">
         <div className="row">
           <div className="col-md-4"></div>
           <div className="col-md-5">
             <div className="card cardbox">
-              <div className="card-header">Register</div>
+              <div className="card-header">Register as Employee</div>
               <div className="card-body">
                 <div className="social-buttons">
                   <a href="#" className="btn btn-md btn-block btn-fb">
@@ -104,7 +106,7 @@ function employee_register() {
                 </div>
 
                 <div className="bottom text-center">
-                  Are you user? <Link href="/login">Login</Link>
+                  Are you user? <Link href="/employee_login">Login</Link>
                 </div>
               </div>
             </div>
