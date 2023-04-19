@@ -1,11 +1,9 @@
 import React from "react";
-import Link from "next/link";
-import Header from "../components/Header";
 
-function Register() {
+import Link from "next/link";
+function Employee() {
   return (
     <>
-      <Header />
       <div className="login_page">
         <div className="container">
           <div className="row">
@@ -62,7 +60,7 @@ function Register() {
                       <div className="border-bottom pb-5 mb-5">
                         <h3 className="c-black">First time here?</h3>
                         <a href="sign-up.html" className="btn btn-custom">
-                          <Link href="/register">Sign up</Link>
+                          <Link href="/employee_register">Sign up</Link>
                         </a>
                       </div>
                       <h5 className="c-black mb-4 mt-n1">Or Sign In With</h5>
@@ -84,4 +82,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Employee;
