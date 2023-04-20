@@ -1,7 +1,42 @@
-import React from "react";
+// import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-
+import { useRouter } from 'next/router'
 function Login() {
+  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [msg,setMsg] = useState("");
+  
+  const handleLogin = async () => {
+    if (!email && !password) {
+      alert("email and pasword is required");
+      return;
+    } else {
+      alert("Login successfully");
+    
+    await fetch("http://localhost:8080/api/auth/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+    .then((res) => res.json())
+    .then((val) => {
+      setEmail("");
+      setPassword("")
+      setMsg(val.message);
+        
+    })
+    .then (router.push("/employee_login")).catch(err => alert(err));
+  
+  };}
   return (
     <>
       <div className="login_page">
@@ -13,7 +48,7 @@ function Login() {
                   <div className="col-md-6">
                     <div className="form-wrap bg-white">
                       <h4 className="btm-sep pb-3 mb-5">Student Login</h4>
-                      <form className="form" method="post" action="#">
+                      <form >
                         <div className="row">
                           <div className="col-12">
                             <div className="form-group position-relative">
@@ -23,6 +58,8 @@ function Login() {
                                 id="email"
                                 className="form-control"
                                 placeholder="Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
                             </div>
                           </div>
@@ -34,6 +71,10 @@ function Login() {
                                 id="password"
                                 className="form-control"
                                 placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)
+                                }
+                                
                               />
                             </div>
                           </div>
@@ -47,10 +88,15 @@ function Login() {
                               type="submit"
                               id="submit"
                               className="btn btn-lg btn-dark btn-block"
+                              onClick={handleLogin}
                             >
                               Sign In
                             </button>
                           </div>
+                          <div className="msg">
+                            <h1>{msg}</h1>
+                         </div>
+                       
                         </div>
                       </form>
                     </div>

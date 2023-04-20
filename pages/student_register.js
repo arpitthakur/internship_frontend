@@ -1,10 +1,40 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "../components/Header";
+import { useRouter } from 'next/router'
+
 import Link from "next/link";
 const student_register = () => {
+  const router = useRouter()
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+  const handleclick = async () => {
+    
+
+    if (!email || !username || !password) {
+      alert("name,email and pasword is required");
+      return;
+     }
+     else {
+      alert("Signup successfully");
+    await fetch("http://localhost:8080/api/auth/signup", {
+      method: "POST",
+      headers: {'Content-Type':'application/json','Access-Control-Allow-Origin': '*'},
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+        
+      }),
+    }).then (router.push("/student_login")).catch(err => alert(err));
+  }
+  
+  };
+
   return (
     <>
       <Header />
+
       <div className="container">
         <div className="row">
           <div className="col-md-4"></div>
@@ -27,34 +57,38 @@ const student_register = () => {
                 </div>
 
                 <div className="form-group">
-                  <form
+                  {/* <form
                     id="login-nav"
-                    method="post"
                     role="form"
                     className="form"
                     accept-charset="UTF-8"
-                  >
+                    onSubmit={handleSubmit}
+                  > */}
                     <div className="form-group">
                       <label className="sr-only">Name</label>
                       <input
                         type="text"
+                        value={username} 
                         id="reg_username"
                         name="user_name"
+                        onChange={(e) => setUsername(e.target.value)}
                         className="form-control"
                         placeholder="Username"
                         required
-                      />
+                      ></input>
                     </div>
                     <div className="form-group">
                       <label className="sr-only">Email</label>
                       <input
                         type="email"
                         id="reg_email"
+                        value={email} 
                         name="user_email"
+                        onChange={(e) => setEmail(e.target.value)}
                         className="form-control"
                         placeholder="Email"
                         required
-                      />
+                      ></input>
                     </div>
 
                     <div className="form-group">
@@ -64,7 +98,9 @@ const student_register = () => {
                         <input
                           type="password"
                           id="reg_userpassword"
+                          value={password}
                           name="user_password"
+                          onChange={(e) => setPassword(e.target.value)}
                           className="form-control"
                           data-placement="bottom"
                           data-toggle="popover"
@@ -72,7 +108,7 @@ const student_register = () => {
                           data-html="true"
                           placeholder="Password"
                           required
-                        />
+                        ></input>
                       </div>
 
                       {/* <div className="help-block text-right">
@@ -94,15 +130,12 @@ const student_register = () => {
                     <div className="form-group">
                       <button
                         id="reg_submit"
-                        name="submit"
-                        value="1"
-                        className="btn btn-block btn-primary"
-                        disabled="disabled"
-                      >
+             
+                     onClick={handleclick} >
                         Create user
                       </button>
                     </div>
-                  </form>
+                  {/* </form> */}
                 </div>
 
                 <div className="bottom text-center">
